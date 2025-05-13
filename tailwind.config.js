@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,13 +5,11 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+    extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 };
+// This is a Tailwind CSS configuration file. It specifies the content sources for Tailwind to scan for class names, extends the default theme, and includes the DaisyUI plugin for additional UI components.
