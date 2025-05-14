@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-const ButtonLogin = ({ isLoggedIn, name } = props) => {
+const ButtonLogin = ({ isLoggedIn }) => {
   //jsx file - which helps us to write both html and javascript but code is a bit different.
   if (isLoggedIn) {
     return (
