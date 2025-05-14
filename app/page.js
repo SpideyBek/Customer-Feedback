@@ -1,5 +1,7 @@
-import ButtonLogin from "@/components/ButtonLogin";
-import FAQListItem from "@/components/FAQListItem";
+import ButtonLogin from "@/components/ButtonLogin"; // Ensure this component exists in the specified path
+import FAQListItem from "@/components/FAQListItem"; // Ensure this component exists in the specified path
+import Image from "next/image"; // Ensure Next.js is properly installed and configured
+import productDemo from "@/app/productDemo.jpeg"; // Ensure this image exists in the specified path
 
 export default function Home() {
   const isLoggedIn = true; // this is a boolean value which is used to check if the user is logged in or not.
@@ -10,7 +12,7 @@ export default function Home() {
     <main>
       {/*header*/}
       <section className="bg-base-200">
-        <div className="flex justify-between items-center px-8 py-2 max-w-3xl mx-auto">
+        <div className="flex justify-between items-center px-8 py-2 max-w-5xl mx-auto">
           <div className="font-bold">BibekCode</div>
           <div className="space-x-4 max-md-hidden">
             <a className="link link-hover">About Me</a>
@@ -28,16 +30,23 @@ export default function Home() {
         </div>
       </section>
       {/*hero section*/}
-      <section className="px-8 text-center py-32 max-w-3xl mx-auto">
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
-          {" "}
-          Collect customer feedback to build better products{" "}
-        </h1>
-        <div className="opacity-90 mb-6">
-          Create a feedback form to collect customer feedback and build better
-          products.
+      <section className="px-8 text-center lg:text-left py-32 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
+        <Image
+          src={productDemo}
+          alt="product demo"
+          className="w-96 rounded-xl saturate-200"
+        />
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+            {" "}
+            Collect customer feedback to build better products{" "}
+          </h1>
+          <div className="opacity-90 mb-6">
+            Create a feedback form to collect customer feedback and build better
+            products.
+          </div>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
       </section>
       {/*pricing*/}
       <section className="bg-base-200" id="pricing">
